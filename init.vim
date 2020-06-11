@@ -8,20 +8,22 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Basic/Permanent
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file search
+Plug 'preservim/nerdtree' " Easier navigation
+Plug 'tpope/vim-fugitive' " Git integration
+Plug 'airblade/vim-gitgutter' " Git diff on sign column
+Plug 'vim-airline/vim-airline' " Better statusline
 
 " Extra/Testing
+Plug 'yggdroot/indentline' " Indent guides
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion engine & linters
+
+" Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
-Plug 'yggdroot/indentline'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Themes
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " Initialize plugin system
 call plug#end()
