@@ -16,6 +16,8 @@ Plug 'vim-airline/vim-airline' " Better statusline
 
 " Extra/Testing
 Plug 'yggdroot/indentline' " Indent guides
+Plug 'tpope/vim-surround' " Adds 'change surround' maps
+Plug 'andrewradev/tagalong.vim' " Easier tag renaming
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion engine & linters
 
 " Syntax highlighting
@@ -400,6 +402,9 @@ endif
 
 " Ctrlp
 map <C-n> :NERDTreeToggle<CR>
+
+" Tagalong
+let g:tagalong_filetypes = ['html', 'xml', 'jsx', 'vue', 'eruby', 'ejs', 'eco', 'php', 'htmldjango', 'javascriptreact', 'typescriptreact']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Coc-compatible configs
