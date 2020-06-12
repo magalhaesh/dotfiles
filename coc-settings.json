@@ -1,4 +1,6 @@
 {
+    "prettier.disableLanguages": [""],
+    "vetur.format.defaultFormatter.html": "prettier",
     "python.linting.pylintArgs": [
         "--load-plugins",
         "pylint-flask"
