@@ -409,6 +409,7 @@ let g:tagalong_filetypes = ['html', 'xml', 'jsx', 'vue', 'eruby', 'ejs', 'eco', 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Coc-compatible configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Currently installed plugins: coc-prettier coc-eslint coc-vetur coc-tsserver coc-python coc-json coc-html coc-css
 " Some servers have issues with backup files, see #649.
 set nowritebackup
 
