@@ -291,5 +291,6 @@ if not __ssh_agent_is_started
 end
 
 alias vim='nvim'
+set -x GPG_TTY (tty)
 
 starship init fish | source
