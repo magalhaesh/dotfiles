@@ -172,6 +172,7 @@ set wrap "Wrap lines
 " Some FileType configs
 au FileType markdown setlocal textwidth=80
 au FileType vue,javascript setlocal sw=2
+autocmd Filetype json let g:indentLine_enabled = 0
 
 
 """"""""""""""""""""""""""""""
