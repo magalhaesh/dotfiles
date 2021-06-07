@@ -24,3 +24,5 @@
 	gpgsign = true
 [pull]
 	ff = only
+[tig "color"]
+    cursor = default blue
