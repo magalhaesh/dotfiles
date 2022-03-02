@@ -8,7 +8,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Basic/Permanent
-Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file search
+Plug 'junegunn/fzf.vim' " Fuzzy file search and more
 Plug 'preservim/nerdtree' " Easier navigation
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'airblade/vim-gitgutter' " Git diff on sign column
@@ -23,6 +23,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion engine & linte
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
+Plug 'fatih/vim-go'
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
@@ -405,7 +406,10 @@ if (g:airline_powerline_fonts == 0)
     let g:airline_symbols.whitespace = 'Ξ'
 endif
 
-" Ctrlp
+" Ctrlp-like behaviour
+map <C-p> :Files<CR>
+
+" Nerdtree toggling
 map <C-n> :NERDTreeToggle<CR>
 
 " Tagalong
@@ -536,3 +540,13 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add Prettier formatting command
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" vim-go specific options
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
