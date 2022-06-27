@@ -12,7 +12,7 @@ Plug 'junegunn/fzf.vim' " Fuzzy file search and more
 Plug 'preservim/nerdtree' " Easier navigation
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'airblade/vim-gitgutter' " Git diff on sign column
-Plug 'vim-airline/vim-airline' " Better statusline
+Plug 'nvim-lualine/lualine.nvim' " Lightweight lua-based statusline
 
 " Extra/Testing
 Plug 'yggdroot/indentline' " Indent guides
@@ -52,7 +52,7 @@ au FocusGained,BufEnter * checktime
 let mapleader = ","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nmap <leader>w :update<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -248,9 +248,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Always show the status line
 set laststatus=2
 
-" Format the status line (not needed if using airline)
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
+" Set up statusline
+lua << END
+require('lualine').setup()
+END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
