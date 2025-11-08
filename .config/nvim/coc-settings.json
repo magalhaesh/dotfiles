@@ -4,7 +4,6 @@
     "eslint.autoFixOnSave": true,
     "prettier.disableLanguages": [""],
     "prettier.formatterPriority": -1,
-    "vetur.format.defaultFormatter.html": "prettier",
     "python.jediEnabled": false,
     "python.venvPath":"~/.config",
     "python.linting.pylintArgs": [

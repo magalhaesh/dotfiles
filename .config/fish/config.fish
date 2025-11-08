@@ -85,9 +85,6 @@ end
 set -l __extra_completionsdir
 set -l __extra_functionsdir
 set -l __extra_confdir
-if test -f $__fish_datadir/__fish_build_paths.fish
-    source $__fish_datadir/__fish_build_paths.fish
-end
 
 # Set up function and completion paths. Make sure that the fish
 # default functions/completions are included in the respective path.
@@ -292,5 +289,13 @@ end
 
 alias vim='nvim'
 set -x GPG_TTY (tty)
+
+# Add pipx to PATH
+fish_add_path /home/henrique/.local/bin
+
+# Google Cloud SDK
+if test -f /home/henrique/Downloads/google-cloud-sdk/path.fish.inc
+    source /home/henrique/Downloads/google-cloud-sdk/path.fish.inc
+end
 
 starship init fish | source

@@ -24,5 +24,9 @@
 	gpgsign = true
 [pull]
 	ff = only
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
 [tig "color"]
-    cursor = default blue
+	cursor = default blue

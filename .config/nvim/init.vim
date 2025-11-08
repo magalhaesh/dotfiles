@@ -19,11 +19,13 @@ Plug 'yggdroot/indentline' " Indent guides
 Plug 'tpope/vim-surround' " Adds 'change surround' maps
 Plug 'andrewradev/tagalong.vim' " Easier tag renaming
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Code completion engine & linters
+Plug 'kkoomen/vim-doge' " Documentation generator
 
 " Syntax highlighting
 Plug 'pangloss/vim-javascript'
 Plug 'posva/vim-vue'
 Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
 
 " Themes
 Plug 'gruvbox-community/gruvbox'
@@ -75,7 +77,7 @@ set wildignore=*.o,*~,*.pyc
 set ruler
 
 " Height of the command bar
-set cmdheight=1
+set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -297,6 +299,9 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
+
+" Quickly open a buffer for scribble
+map <leader>q :e ~/quicknotes.txt<cr>
 
 " Setting Python 3 host prog
 let g:python3_host_prog='/home/henrique/.config/neovim3/bin/python'
