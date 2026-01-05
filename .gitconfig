@@ -1,7 +1,6 @@
 [user]
 	email =
 	name =
-	signingkey =
 
 [merge]
 	tool = vimdiff
@@ -20,8 +19,6 @@
 
 [core]
 	editor = nvim
-[commit]
-	gpgsign = true
 [pull]
 	ff = only
 [push]
