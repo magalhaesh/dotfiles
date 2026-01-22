@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # autorandr postswitch hook - Sets DPI based on active display profile
 #
-# Profiles:
-#   monitors - Regular dual-monitor setup (96 DPI / 1.0x)
-#   tv       - TV connected (192 DPI / 2.0x)
+# Profile naming convention: <type>-<machine>
+#   monitors-meridian, monitors-eyenix  (96 DPI / 1.0x)
+#   tv-meridian, tv-eyenix              (192 DPI / 2.0x)
 
 case "$AUTORANDR_CURRENT_PROFILE" in
-    monitors)
+    monitors*|docked*|home*)
         DPI=96
         ;;
-    tv)
+    tv*)
         DPI=192
         ;;
     *)
