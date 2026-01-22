@@ -1,4 +1,5 @@
-Xft.dpi: 144
+! DPI is managed by autorandr postswitch hook (~/.config/autorandr/postswitch)
+! Profiles: monitors = 96 DPI (1.0x), tv = 192 DPI (2.0x)
 
 Xcursor.theme: Bibata-Modern-Ice
 Xcursor.size: 24

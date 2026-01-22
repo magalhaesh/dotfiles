@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# autorandr postswitch hook - Sets DPI based on active display profile
+#
+# Profiles:
+#   monitors - Regular dual-monitor setup (96 DPI / 1.0x)
+#   tv       - TV connected (192 DPI / 2.0x)
+
+case "$AUTORANDR_CURRENT_PROFILE" in
+    monitors)
+        DPI=96
+        ;;
+    tv)
+        DPI=192
+        ;;
+    *)
+        # Default fallback for unknown profiles
+        DPI=96
+        ;;
+esac
+
+# Update Xft.dpi in X resources
+echo "Xft.dpi: $DPI" | xrdb -merge
+
+# Restart AwesomeWM to pick up new DPI for widgets and bars
+echo "awesome.restart()" | awesome-client 2>/dev/null || true
+
+# Log the change for debugging
+logger "autorandr postswitch: Profile '$AUTORANDR_CURRENT_PROFILE' - Set DPI to $DPI"
