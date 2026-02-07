@@ -1,5 +1,5 @@
 function __ssh_agent_is_started -d "check if ssh agent is already started"
-  	if begin; test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"; end
+	if begin; test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"; end
 		source $SSH_ENV > /dev/null
 	end
 
@@ -7,6 +7,6 @@ function __ssh_agent_is_started -d "check if ssh agent is already started"
 		return 1
 	end
 
-	ps -ef | grep $SSH_AGENT_PID | grep -v grep | grep -q ssh-agent
+	kill -0 $SSH_AGENT_PID 2>/dev/null
 	return $status
 end
