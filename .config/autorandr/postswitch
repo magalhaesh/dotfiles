@@ -24,5 +24,12 @@ echo "Xft.dpi: $DPI" | xrdb -merge
 # Restart AwesomeWM to pick up new DPI for widgets and bars
 echo "awesome.restart()" | awesome-client 2>/dev/null || true
 
+# NVIDIA: enable ForceFullCompositionPipeline on TV profiles to eliminate
+# screen tearing during fullscreen gaming on X11. Adds ~1 frame of latency,
+# acceptable for cinematic/single-player gaming on the LG TV.
+if [[ "$AUTORANDR_CURRENT_PROFILE" == tv-* ]] && command -v nvidia-settings >/dev/null; then
+    nvidia-settings --assign CurrentMetaMode="HDMI-0: 3840x2160_120 +0+0 {ForceFullCompositionPipeline=On, ViewPortIn=3840x2160, ViewPortOut=3840x2160+0+0}" >/dev/null 2>&1 || true
+fi
+
 # Log the change for debugging
 logger "autorandr postswitch: Profile '$AUTORANDR_CURRENT_PROFILE' - Set DPI to $DPI"
